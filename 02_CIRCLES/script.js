@@ -115,3 +115,5 @@ context.lineTo(525, 100);
 context.closePath();
 context.stroke();
 context.fill();
+
+//cirkel
