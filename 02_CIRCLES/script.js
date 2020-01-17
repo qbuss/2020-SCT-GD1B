@@ -12,26 +12,22 @@ canvas.height = height;
 
 // hier kun je op de canvas tekenen
 
-context.beginPath();
-context.fillstyle = 'yellow';
-context.arc(400, 300, 20, 0, Math.PI * 2);
-context.stroke();
-context.fill();
-context.closePath();
-
-function getRandomNumber(max){
-    return Math.floor(Math.random()*max);
+// random number
+function getRandomNumber(max) {
+    return Math.floor(Math.random() * max);
 }
 
-function tekenCrikel(){
-    context.beginPath()
-    context.fillstyle = "red"
-    arc(getRandomNumber(width),getRandomNumber(height),20,0,Math.PI*2);
+
+//functie
+function tekenCrikel(posX, posY, radius, kleur) {
+    context.beginPath();
+    context.fillStyle = kleur;
+    context.arc(posX, posY, radius, 0, Math.PI * 2);
     context.stroke();
     context.fill();
     context.closePath();
 }
 
-for(let i= 0; i<1--; i++){
-    tekenCrikel();
+for (let i = 0; i < 5; i++) {
+    tekenCrikel(100, 100, 20, "red")
 }

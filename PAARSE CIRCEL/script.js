@@ -4,6 +4,9 @@ const canvas = document.getElementById('canvas');
 // leg een 2d-context over de canvas
 const context = canvas.getContext('2d');
 
+// random kleuren
+let colors = {"blue","purple","green","yellow","gold","black","red"}
+
 // maak de canvas schermvullend
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -17,7 +20,7 @@ for(let i =0; i<10; i++){
     circleObject.X = 400 + getRandomInt(0,width);
     circleObject.Y = 200 + getRandomInt(0,width);
     circleObject.radius = 40;
-    circleObject.color = "purple";
+    circleObject.color = colors[getRandomNumber(colors.length)];
     circleObject.speedX = 10;
     circleObject.speedY = 10;
 
@@ -48,20 +51,21 @@ for(let i =0; i<10; i++){
 
         if(circleObject.X < 0 ){
             circleObject.speedX = -circleObject.speedX;
+        }
     }
 
-    circles.push(circleObject);}
+    circles.push(circleObject);
 }
 
 function anime(){
     context.clearRect(0,0,width,height);
     for (let i = 0; i<circles.length;i++){
-        circles[i].update
+        circles[i].update();
         circles[i].draw();
     }
 }
 
-//setInterval(anime,10);
+setInterval(anime,10);
 
 function getRandomInt(min,max){
     min = Math.ceil(min);
