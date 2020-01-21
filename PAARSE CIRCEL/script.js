@@ -5,7 +5,7 @@ const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 
 // random kleuren
-let colors = {"blue","purple","green","yellow","gold","black","red"}
+let colors = ["blue","purple","green","yellow","gold","black","red"]
 
 // maak de canvas schermvullend
 const width = window.innerWidth;
@@ -20,7 +20,7 @@ for(let i =0; i<10; i++){
     circleObject.X = 400 + getRandomInt(0,width);
     circleObject.Y = 200 + getRandomInt(0,width);
     circleObject.radius = 40;
-    circleObject.color = colors[getRandomNumber(colors.length)];
+    circleObject.color = colors[getRandomInt(0, colors.length)];
     circleObject.speedX = 10;
     circleObject.speedY = 10;
 
